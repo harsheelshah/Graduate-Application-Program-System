@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="3458" started-at="2016-02-01T21:27:48Z" finished-at="2016-02-01T21:27:51Z">
+    <groups>
+      <group name="GappAccountingDaoTest">
+        <method signature="GappAccountingDaoTest.getGappAccounting()[pri:0, instance:gapp.model.dao.GappAccountingDaoTest@6fc6f14e]" name="getGappAccounting" class="gapp.model.dao.GappAccountingDaoTest"/>
+      </group> <!-- GappAccountingDaoTest -->
+    </groups>
+    <test name="Default test" duration-ms="3458" started-at="2016-02-01T21:27:48Z" finished-at="2016-02-01T21:27:51Z">
+      <class name="gapp.model.dao.GappAccountingDaoTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:gapp.model.dao.GappAccountingDaoTest@6fc6f14e]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="15" started-at="2016-02-01T13:27:48Z" finished-at="2016-02-01T13:27:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:gapp.model.dao.GappAccountingDaoTest@6fc6f14e]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="2900" started-at="2016-02-01T13:27:48Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2016-02-01T13:27:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:gapp.model.dao.GappAccountingDaoTest@6fc6f14e]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="94" started-at="2016-02-01T13:27:51Z" finished-at="2016-02-01T13:27:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void gapp.model.dao.GappAccountingDaoTest.getGappAccounting()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="getGappAccounting()[pri:0, instance:gapp.model.dao.GappAccountingDaoTest@6fc6f14e]" name="getGappAccounting" duration-ms="390" started-at="2016-02-01T13:27:51Z" finished-at="2016-02-01T13:27:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getGappAccounting -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:gapp.model.dao.GappAccountingDaoTest@6fc6f14e]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="27" started-at="2016-02-01T13:27:51Z" finished-at="2016-02-01T13:27:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void gapp.model.dao.GappAccountingDaoTest.getGappAccounting()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:gapp.model.dao.GappAccountingDaoTest@6fc6f14e]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2016-02-01T13:27:51Z" finished-at="2016-02-01T13:27:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- gapp.model.dao.GappAccountingDaoTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

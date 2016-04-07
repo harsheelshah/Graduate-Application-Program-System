@@ -1,0 +1,196 @@
+
+    create table gapp_academic_records (
+        arid int4 not null,
+        GPA varchar(255),
+        collegename varchar(255),
+        degreeearned varchar(255),
+        major varchar(255),
+        timeattended varchar(255),
+        transcript varchar(255),
+        primary key (arid)
+    );
+
+    create table gapp_additional (
+        additionalid int4 not null,
+        additionalname varchar(255),
+        field varchar(255),
+        required boolean not null,
+        primary key (additionalid)
+    );
+
+    create table gapp_application_status (
+        statusid int4 not null,
+        comments varchar(255),
+        name varchar(255),
+        timeofchange timestamp,
+        primary key (statusid)
+    );
+
+    create table gapp_applications (
+        appid int4 not null,
+        GRE varchar(255),
+        TOEFL varchar(255),
+        term varchar(255),
+        id_id int4,
+        prgmid_prgmid int4,
+        primary key (appid)
+    );
+
+    create table gapp_applications_gapp_application_status (
+        gapp_applications_appid int4 not null,
+        statusid_statusid int4 not null
+    );
+
+    create table gapp_department (
+        deptid int4 not null,
+        departmentname varchar(255),
+        primary key (deptid)
+    );
+
+    create table gapp_department_gapp_additional (
+        gapp_department_deptid int4 not null,
+        additionalid_additionalid int4 not null
+    );
+
+    create table gapp_program (
+        prgmid int4 not null,
+        programname varchar(255),
+        deptid_deptid int4,
+        primary key (prgmid)
+    );
+
+    create table gapp_status (
+        statid int4 not null,
+        desription varchar(255),
+        name varchar(255),
+        primary key (statid)
+    );
+
+    create table gapp_user_additional (
+        addid int4 not null,
+        name varchar(255),
+        value varchar(255),
+        primary key (addid)
+    );
+
+    create table gapp_users (
+        id int4 not null,
+        CIN varchar(255),
+        DOB timestamp,
+        citizenship varchar(255),
+        email varchar(255),
+        firstname varchar(255),
+        gender varchar(255),
+        lastname varchar(255),
+        password varchar(255),
+        phone varchar(255),
+        primary key (id)
+    );
+
+    create table gapp_users_gapp_academic_records (
+        gapp_users_id int4 not null,
+        arid_arid int4 not null
+    );
+
+    create table gapp_users_gapp_user_additional (
+        gapp_users_id int4 not null,
+        addid_addid int4 not null
+    );
+
+    create table gapp_users_gapp_users_type (
+        gapp_users_id int4 not null,
+        typeid_typeid int4 not null
+    );
+
+    create table gapp_users_type (
+        typeid int4 not null,
+        type varchar(255),
+        primary key (typeid)
+    );
+
+    create table users (
+        id int4 not null,
+        enabled boolean not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (id)
+    );
+
+    alter table gapp_applications_gapp_application_status 
+        add constraint UK_9kcsoqqcvnxjvgtrh16tm5wx9 unique (statusid_statusid);
+
+    alter table gapp_department_gapp_additional 
+        add constraint UK_j0vp0k9y3df39271shobhodbf unique (additionalid_additionalid);
+
+    alter table gapp_users_gapp_academic_records 
+        add constraint UK_33bnfsfmcaf9a7vm64i0dyf5r unique (arid_arid);
+
+    alter table gapp_users_gapp_user_additional 
+        add constraint UK_po1ssxqglp7m0ebjbescpiceq unique (addid_addid);
+
+    alter table gapp_applications 
+        add constraint FK_9bba0dnm2qgsl0lchewb9tdow 
+        foreign key (id_id) 
+        references gapp_users;
+
+    alter table gapp_applications 
+        add constraint FK_snbay1hao8l6ctw7v9n41u45q 
+        foreign key (prgmid_prgmid) 
+        references gapp_program;
+
+    alter table gapp_applications_gapp_application_status 
+        add constraint FK_9kcsoqqcvnxjvgtrh16tm5wx9 
+        foreign key (statusid_statusid) 
+        references gapp_application_status;
+
+    alter table gapp_applications_gapp_application_status 
+        add constraint FK_12wenok92fs6xoiqquojg86mv 
+        foreign key (gapp_applications_appid) 
+        references gapp_applications;
+
+    alter table gapp_department_gapp_additional 
+        add constraint FK_j0vp0k9y3df39271shobhodbf 
+        foreign key (additionalid_additionalid) 
+        references gapp_additional;
+
+    alter table gapp_department_gapp_additional 
+        add constraint FK_5cd2q6qcsym1f0jvloguevcmu 
+        foreign key (gapp_department_deptid) 
+        references gapp_department;
+
+    alter table gapp_program 
+        add constraint FK_ehqw69faxyflijsucso47n91x 
+        foreign key (deptid_deptid) 
+        references gapp_department;
+
+    alter table gapp_users_gapp_academic_records 
+        add constraint FK_33bnfsfmcaf9a7vm64i0dyf5r 
+        foreign key (arid_arid) 
+        references gapp_academic_records;
+
+    alter table gapp_users_gapp_academic_records 
+        add constraint FK_74r1fp7nyctxqgipiriwlt9yv 
+        foreign key (gapp_users_id) 
+        references gapp_users;
+
+    alter table gapp_users_gapp_user_additional 
+        add constraint FK_po1ssxqglp7m0ebjbescpiceq 
+        foreign key (addid_addid) 
+        references gapp_user_additional;
+
+    alter table gapp_users_gapp_user_additional 
+        add constraint FK_6upq7c38in6tr0tms7gtr1lbg 
+        foreign key (gapp_users_id) 
+        references gapp_users;
+
+    alter table gapp_users_gapp_users_type 
+        add constraint FK_ua9ntqc07ug140tur5x2q95d 
+        foreign key (typeid_typeid) 
+        references gapp_users_type;
+
+    alter table gapp_users_gapp_users_type 
+        add constraint FK_8i7kx7jl3fumo2xb7e6an3yjf 
+        foreign key (gapp_users_id) 
+        references gapp_users;
+
+    create sequence hibernate_sequence;

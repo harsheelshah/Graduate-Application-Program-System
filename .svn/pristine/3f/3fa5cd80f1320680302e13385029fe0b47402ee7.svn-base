@@ -1,0 +1,23 @@
+package gapp.model.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
+import org.testng.annotations.Test;
+
+@Test(groups = "GappApplicationDaoTest")
+@ContextConfiguration(locations = "classpath:applicationContext.xml")
+
+public class GappApplicationDaoTest extends AbstractTransactionalTestNGSpringContextTests{
+
+	@Autowired
+	GappApplicationDao gappapplication;
+	
+	 @Test
+	    public void getGappApplication()
+	    {
+	        assert gappapplication.getGappApplication().size() == 1;
+	    }
+	
+	
+}

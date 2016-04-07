@@ -1,0 +1,18 @@
+package gapp.model.dao;
+
+import java.util.List;
+
+import gapp.model.GappUsers;
+
+
+public interface UsersDao {
+	
+	
+	
+	List<GappUsers> getUserType (String email,String password);
+	
+	GappUsers getUserId(Integer id);
+	
+	List<GappUsers> checkuser(String email );
+
+}

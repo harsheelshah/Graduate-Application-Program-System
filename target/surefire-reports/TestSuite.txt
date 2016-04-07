@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 11.222 sec <<< FAILURE!
+getGappAccounting(gapp.model.dao.GappAccountingDaoTest)  Time elapsed: 0.462 sec  <<< FAILURE!
+java.lang.AssertionError
+	at gapp.model.dao.GappAccountingDaoTest.getGappAccounting(GappAccountingDaoTest.java:18)
+
+getGappApplication(gapp.model.dao.GappApplicationDaoTest)  Time elapsed: 0.018 sec  <<< FAILURE!
+java.lang.AssertionError
+	at gapp.model.dao.GappApplicationDaoTest.getGappApplication(GappApplicationDaoTest.java:19)
+
+getGappDepartment(gapp.model.dao.GappDepartmentDaoTest)  Time elapsed: 0.129 sec  <<< FAILURE!
+java.lang.AssertionError
+	at gapp.model.dao.GappDepartmentDaoTest.getGappDepartment(GappDepartmentDaoTest.java:18)
+

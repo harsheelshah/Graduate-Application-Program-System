@@ -1,0 +1,62 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Edit Department</title>
+</head>
+<body>
+
+<form:form modelAttribute="GappDepartment">
+DepartmentName:<form:input path="departmentname"/>
+<input type="submit" name="save" value="Save">
+</form:form>
+
+<br><br>
+Add/Remove programs:
+<br><br>
+<table border = 2>
+<c:set var = "s1" value="${GappDepartment.prgmid}" />
+<tr><!-- <td>ProgramId</td> --><td>ProgramName</td><td>Remove</td></tr>
+<c:forEach items="${s1}" var="s1">
+
+<tr><%-- <td>${s1.prgmid}</td> --%>
+ <td>${s1.programname}</td>  
+<td><a href="removeprgm.html?prgmid=${s1.prgmid}">Remove</a></td></tr>
+</c:forEach>
+</table>
+
+
+<br><br>
+<a href="addprgmdept.html?deptid=${GappDepartment.deptid }">Add Programs</a>
+
+
+
+<br><br>
+Add/Remove Additional:
+<br><br>
+<table border = 2>
+<c:set var = "s2" value="${GappDepartment.additionalid }" />
+<tr><!-- <td>Additional ID</td> --><td>Additional Name</td><td>Remove</td></tr>
+<c:forEach items="${s2}" var="s2">
+
+<tr><%-- <td>${s2.additionalid}</td> --%>
+ <td>${s2.additionalname}</td>  
+<td><a href="removeadditional.html?additionalid=${s2.additionalid}">Remove</a></td></tr>
+</c:forEach>
+</table>
+
+
+<br><br>
+<a href="addadditionaldept.html?deptid=${GappDepartment.deptid }">Add Additional</a>
+
+
+
+
+
+</body>
+</html>

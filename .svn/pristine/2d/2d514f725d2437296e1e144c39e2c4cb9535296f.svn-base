@@ -1,0 +1,22 @@
+package gapp.model.dao;
+
+
+
+import gapp.model.GappProgram;
+import gapp.model.GappUsers;
+
+import java.util.List;
+
+public interface ProgramDao {
+
+	List<GappProgram> getGappProgram();
+	
+	GappProgram saveProgram(GappProgram program);
+	
+	GappProgram remove(GappProgram p1);
+	
+	List<GappProgram> removeProgram (Integer prgmid);
+	
+	 GappProgram getProgramId(Integer id);
+	 
+}

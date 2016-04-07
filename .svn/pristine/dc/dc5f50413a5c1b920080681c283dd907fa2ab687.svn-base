@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%-- <jsp:useBean id="c" class="gapp.StudentController" scope="application" /> --%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>        
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Admin</title>
+</head>
+<body>
+Hi Admin &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="login.html">Logout</a>
+<br><br>
+Welcome to Gapp
+<br><br>
+
+
+<table border = 2>
+<tr>
+<!-- <td><b>Departmentid</b></td> -->
+<td><b>DepartmentName</b></td>
+<td><b>No of Programs</b></td>
+<td>View</td>
+</tr>
+
+<c:forEach items="${GappDepartment}" var="dept">
+<tr>
+<%-- <td>${dept.deptid}</td> --%>
+<td>${dept.departmentname}</td>
+<td>${fn:length(dept.prgmid)}</td>
+<td><a href="editdept.html?deptid=${dept.deptid}">View</a></td>
+</c:forEach>
+
+</table>
+<br><br>
+
+<a href="adddept.html">Add New Department</a>&nbsp&nbsp&nbsp&nbsp
+<a href="addprgm.html">Add New Program</a>&nbsp&nbsp&nbsp&nbsp
+<a href="addadditional.html">Add New Additional</a>
+
+
+</body>
+</html>

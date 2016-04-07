@@ -1,0 +1,113 @@
+package gapp.model;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="gapp_applications")
+public class GappApplication implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue
+	private Integer appid;
+	
+	private String GRE;
+	
+	private String TOEFL;
+	
+	private String term;
+	
+	@OneToOne
+	GappUsers id;
+	
+	@OneToOne
+	GappProgram prgmid;
+	
+	@OneToMany
+	List<GappApplicationStatus> statusid;
+
+	public GappApplication() {
+		super();
+	}
+
+	public GappApplication(Integer appid, String gRE, String tOEFL,
+			String term, GappUsers id, GappProgram prgmid,
+			List<GappApplicationStatus> statusid) {
+		super();
+		this.appid = appid;
+		GRE = gRE;
+		TOEFL = tOEFL;
+		this.term = term;
+		this.id = id;
+		this.prgmid = prgmid;
+		this.statusid = statusid;
+	}
+
+	public Integer getAppid() {
+		return appid;
+	}
+
+	public void setAppid(Integer appid) {
+		this.appid = appid;
+	}
+
+	public String getGRE() {
+		return GRE;
+	}
+
+	public void setGRE(String gRE) {
+		GRE = gRE;
+	}
+
+	public String getTOEFL() {
+		return TOEFL;
+	}
+
+	public void setTOEFL(String tOEFL) {
+		TOEFL = tOEFL;
+	}
+
+	public String getTerm() {
+		return term;
+	}
+
+	public void setTerm(String term) {
+		this.term = term;
+	}
+
+	public GappUsers getId() {
+		return id;
+	}
+
+	public void setId(GappUsers id) {
+		this.id = id;
+	}
+
+	public GappProgram getPrgmid() {
+		return prgmid;
+	}
+
+	public void setPrgmid(GappProgram prgmid) {
+		this.prgmid = prgmid;
+	}
+
+	public List<GappApplicationStatus> getStatusid() {
+		return statusid;
+	}
+
+	public void setStatusid(List<GappApplicationStatus> statusid) {
+		this.statusid = statusid;
+	}
+
+	
+	
+}

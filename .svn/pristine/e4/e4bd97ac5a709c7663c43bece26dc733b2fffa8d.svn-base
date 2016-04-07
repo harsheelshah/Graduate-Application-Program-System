@@ -1,0 +1,28 @@
+package gapp.model.dao.jpa;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import gapp.model.GappApplication;
+import gapp.model.dao.GappApplicationDao;
+
+@Repository
+public class GappApplicationDaoImpl implements GappApplicationDao{
+	
+	  @PersistenceContext
+	    private EntityManager entityManager;
+	  
+	 
+		@Override
+		public List<GappApplication> getGappApplication() {
+			//return entityManager.createQuery( "from GappApplication where id.firstname='Neil' " , GappApplication.class )
+			return entityManager.createQuery( "select application from GappApplication application join application.id user join user.typeid typ where user.firstname='Neil' and typ.type='Students' " , GappApplication.class )	
+		            //.setParameter("x", x).setParameter("y", y).getResultList();
+					.getResultList();
+		}
+
+}
