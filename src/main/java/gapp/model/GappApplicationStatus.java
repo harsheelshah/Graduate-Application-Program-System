@@ -9,29 +9,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="gapp_application_status")
-public class GappApplicationStatus implements Serializable{
-	
+@Table(name = "gapp_application_status")
+public class GappApplicationStatus implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private Integer statusid;
-	
+
 	private String name;
-	
+
 	private String comments;
 
 	public GappApplicationStatus() {
 		super();
 	}
 
-	public GappApplicationStatus(Integer statusid, String name,
-			 String comments) {
+	public GappApplicationStatus(Integer statusid, String name, String comments) {
 		super();
 		this.statusid = statusid;
 		this.name = name;
-		
+
 		this.comments = comments;
 	}
 
@@ -51,8 +50,6 @@ public class GappApplicationStatus implements Serializable{
 		this.name = name;
 	}
 
-	
-
 	public String getComments() {
 		return comments;
 	}
@@ -61,5 +58,4 @@ public class GappApplicationStatus implements Serializable{
 		this.comments = comments;
 	}
 
-	
 }

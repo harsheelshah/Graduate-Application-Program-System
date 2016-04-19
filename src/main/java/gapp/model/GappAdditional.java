@@ -10,23 +10,23 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="gapp_additional")
-public class GappAdditional implements Serializable{
+@Table(name = "gapp_additional")
+public class GappAdditional implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private Integer additionalid;
-	
+
 	private String additionalname;
-	
+
 	private String field;
-	
+
 	private boolean required;
-	
+
 	private String type;
-	
+
 	@ManyToOne
 	GappDepartment deptid;
 
@@ -93,7 +93,4 @@ public class GappAdditional implements Serializable{
 		this.deptid = deptid;
 	}
 
-	
-	
-	
 }

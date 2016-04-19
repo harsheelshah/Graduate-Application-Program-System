@@ -8,17 +8,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="gapp_user_additional")
+@Table(name = "gapp_user_additional")
 public class GappUserAdditional implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private Integer addid;
-	
+
 	private String name;
-	
+
 	private String value;
 
 	public GappUserAdditional() {
@@ -56,5 +56,4 @@ public class GappUserAdditional implements Serializable {
 		this.value = value;
 	}
 
-	
 }

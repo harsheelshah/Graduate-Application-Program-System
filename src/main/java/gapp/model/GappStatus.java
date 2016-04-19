@@ -8,17 +8,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="gapp_status")
-public class GappStatus implements Serializable{
+@Table(name = "gapp_status")
+public class GappStatus implements Serializable {
 
-private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue
 	private Integer statid;
-	
+
 	private String name;
-	
+
 	private String desription;
 
 	public GappStatus() {
@@ -55,7 +55,5 @@ private static final long serialVersionUID = 1L;
 	public void setDesription(String desription) {
 		this.desription = desription;
 	}
-	
-	
-	
+
 }

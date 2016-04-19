@@ -8,20 +8,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="gapp_file")
+@Table(name = "gapp_file")
 public class GappFile implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private Integer fileid;
-	
-	private String filename;
-	
-    private String type;
 
-    private Long size;
+	private String filename;
+
+	private String type;
+
+	private Long size;
 
 	public GappFile(Integer fileid, String filename, String type, Long size) {
 		super();
@@ -66,7 +66,5 @@ public class GappFile implements Serializable {
 	public void setSize(Long size) {
 		this.size = size;
 	}
-    
-    
 
 }

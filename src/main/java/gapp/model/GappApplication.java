@@ -12,53 +12,52 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="gapp_applications")
+@Table(name = "gapp_applications")
 public class GappApplication implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private Integer appid;
-	
+
 	private String GRE;
-	
+
 	private String TOEFL;
-	
+
 	private String term;
-	
+
 	private Date Date;
-	
+
 	private String applicantfirstname;
-	
+
 	private String applicantlastname;
-	
+
 	private String applicantemail;
-	
+
 	private String CIN;
-	
+
 	private String phone;
-	
+
 	private String gender;
-	
+
 	private String DOB;
-	
+
 	private String citizenship;
-	
-	
+
 	@OneToOne
-    private GappFile transcript;
-	
+	private GappFile transcript;
+
 	@OneToOne
 	GappUsers id;
-	
-	@OneToOne(orphanRemoval=true)
+
+	@OneToOne(orphanRemoval = true)
 	GappProgram prgmid;
-	
+
 	@OneToOne
 	GappApplicationStatus statusid;
-	
-	@OneToMany(mappedBy="appid")
+
+	@OneToMany(mappedBy = "appid")
 	List<GappAcademicRecords> arid;
 
 	public GappApplication() {
@@ -236,7 +235,4 @@ public class GappApplication implements Serializable {
 		this.arid = arid;
 	}
 
-	
-	
-	
 }

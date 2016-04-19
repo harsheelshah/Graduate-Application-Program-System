@@ -11,19 +11,19 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="gapp_program")
-public class GappProgram implements Serializable{
-	
+@Table(name = "gapp_program")
+public class GappProgram implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
 	private Integer prgmid;
-	
+
 	private String programname;
-	
+
 	@ManyToOne
-	@JsonIgnore	
+	@JsonIgnore
 	GappDepartment deptid;
 
 	public GappProgram() {
@@ -61,6 +61,4 @@ public class GappProgram implements Serializable{
 		this.deptid = deptid;
 	}
 
-	
-	
 }

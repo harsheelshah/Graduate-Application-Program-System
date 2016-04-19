@@ -11,25 +11,25 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="gapp_academic_records")
-public class GappAcademicRecords  implements Serializable {
+@Table(name = "gapp_academic_records")
+public class GappAcademicRecords implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private Integer arid;
-	
+
 	private String collegename;
-	
+
 	private String timeattended;
-	
+
 	private String degreeearned;
-	
+
 	private String major;
-	
+
 	private String GPA;
-	
+
 	@ManyToOne
 	GappApplication appid;
 
@@ -105,7 +105,5 @@ public class GappAcademicRecords  implements Serializable {
 	public void setAppid(GappApplication appid) {
 		this.appid = appid;
 	}
-
-	
 
 }

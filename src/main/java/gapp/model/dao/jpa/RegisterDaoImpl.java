@@ -8,21 +8,16 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-
-
 @Repository
-public class RegisterDaoImpl implements RegisterDao{
-	
+public class RegisterDaoImpl implements RegisterDao {
+
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Override
 	@Transactional
-	public GappUsers saveUsers(GappUsers users){
+	public GappUsers saveUsers(GappUsers users) {
 		return entityManager.merge(users);
-		
-		
-		
-		 
+
 	}
 }

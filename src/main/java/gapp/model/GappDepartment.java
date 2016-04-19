@@ -10,21 +10,21 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="gapp_department")
-public class GappDepartment implements Serializable{
-	
+@Table(name = "gapp_department")
+public class GappDepartment implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
 	private Integer deptid;
-	
+
 	private String departmentname;
-	
-	@OneToMany(mappedBy="deptid")
+
+	@OneToMany(mappedBy = "deptid")
 	List<GappProgram> prgmid;
-	
-	@OneToMany(mappedBy="deptid")
+
+	@OneToMany(mappedBy = "deptid")
 	List<GappAdditional> additionalid;
 
 	public GappDepartment() {
@@ -72,6 +72,4 @@ public class GappDepartment implements Serializable{
 		this.additionalid = additionalid;
 	}
 
-	
-	
 }

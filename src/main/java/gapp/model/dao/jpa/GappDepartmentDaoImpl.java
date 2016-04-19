@@ -14,45 +14,45 @@ import gapp.model.GappProgram;
 import gapp.model.dao.GappDepartmentDao;
 
 @Repository
-public class GappDepartmentDaoImpl implements GappDepartmentDao{
+public class GappDepartmentDaoImpl implements GappDepartmentDao {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	
+
 	@Override
 	public GappDepartment getDepartmentId(Integer id) {
 		// TODO Auto-generated method stub
 		return entityManager.find(GappDepartment.class, id);
-		//return  entityManager.createQuery("from GappUsers", GappUsers.class).getResultList();
+		// return entityManager.createQuery("from GappUsers",
+		// GappUsers.class).getResultList();
 	}
-	
 
 	@Override
 	public GappAdditional getAdditionalId(Integer id) {
 		// TODO Auto-generated method stub
 		return entityManager.find(GappAdditional.class, id);
-		//return  entityManager.createQuery("from GappUsers", GappUsers.class).getResultList();
+		// return entityManager.createQuery("from GappUsers",
+		// GappUsers.class).getResultList();
 	}
-	
+
 	@Override
 	public List<GappDepartment> getGappDepartment() {
-		return entityManager.createQuery( "from GappDepartment order by id", GappDepartment.class )
-	            .getResultList();
+		return entityManager.createQuery("from GappDepartment order by id",
+				GappDepartment.class).getResultList();
 	}
-	
+
 	@Override
 	@Transactional
-	public GappDepartment saveDepartment(GappDepartment department){
+	public GappDepartment saveDepartment(GappDepartment department) {
 		return entityManager.merge(department);
-		 
+
 	}
-	
+
 	@Override
 	@Transactional
-	public GappAdditional saveAdditional(GappAdditional additional){
+	public GappAdditional saveAdditional(GappAdditional additional) {
 		return entityManager.merge(additional);
-		 
+
 	}
-	
-	
+
 }

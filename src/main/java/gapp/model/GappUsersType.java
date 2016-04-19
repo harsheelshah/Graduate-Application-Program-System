@@ -8,24 +8,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="gapp_users_type")
+@Table(name = "gapp_users_type")
 public class GappUsersType implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	private Integer typeid;
-	
+
 	private String type;
 
-	
-	
 	public GappUsersType() {
 		super();
 	}
-
-
 
 	public GappUsersType(Integer typeid, String type) {
 		super();
@@ -33,31 +29,20 @@ public class GappUsersType implements Serializable {
 		this.type = type;
 	}
 
-
-
 	public Integer getTypeid() {
 		return typeid;
 	}
-
-
 
 	public void setTypeid(Integer typeid) {
 		this.typeid = typeid;
 	}
 
-
-
 	public String getType() {
 		return type;
 	}
 
-
-
 	public void setType(String type) {
 		this.type = type;
 	}
-
-
-
 
 }
